@@ -10,6 +10,12 @@ module.exports = {
     defineExpose: 'readonly',
     withDefaults: 'readonly',
   },
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
   rules: {
     'vue/block-lang': ['error',
       {
