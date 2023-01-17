@@ -1,0 +1,22 @@
+{
+  "name": "@ouuan/eslint-config",
+  "version": "0.1.0",
+  "description": "ouuan's personal ESLint configs",
+  "repository": "https://github.com/ouuan/eslint-config",
+  "author": "Yufan You <ouuansteve@gmail.com>",
+  "license": "Apache-2.0",
+  "private": true,
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "release": "bumpp package.json packages/*/package.json --commit --push --tag && pnpm -r publish --access public"
+  },
+  "devDependencies": {
+    "@ouuan/eslint-config-ts": "workspace:*",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.32.0"
+  }
+}

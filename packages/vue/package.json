@@ -1,0 +1,27 @@
+{
+  "name": "@ouuan/eslint-config-vue",
+  "version": "0.1.0",
+  "main": "index.js",
+  "description": "ouuan's personal ESLint configs for Vue with TypeScript",
+  "repository": "https://github.com/ouuan/eslint-config",
+  "author": "Yufan You <ouuansteve@gmail.com>",
+  "license": "Apache-2.0",
+  "private": false,
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "dependencies": {
+    "@ouuan/eslint-config-ts": "workspace:*",
+    "@vue/eslint-config-typescript": "^11.0.2",
+    "eslint-plugin-vue": "^9.9.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=8",
+    "typescript": ">=4"
+  },
+  "devDependencies": {
+    "eslint": "^8.32.0",
+    "typescript": "^4.9.4"
+  }
+}
