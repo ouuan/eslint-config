@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "release": "bumpp package.json packages/*/package.json --commit --push --tag && pnpm -r publish --access public"
+    "release": "bumpp package.json packages/*/package.json --no-commit --no-push --no-tag && git commit -av && git push && pnpm -r publish --access public"
   },
   "devDependencies": {
     "@ouuan/eslint-config-ts": "workspace:*",
