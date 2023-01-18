@@ -71,5 +71,7 @@ module.exports = {
     'no-restricted-syntax': ['error', 'ForInStatement', 'LabeledStatement', 'WithStatement'],
 
     'no-constant-condition': ['error', { checkLoops: false }],
+
+    'no-continue': 0,
   },
 };
