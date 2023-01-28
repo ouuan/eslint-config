@@ -3,7 +3,11 @@
   "version": "1.1.1",
   "main": "index.js",
   "description": "ouuan's personal ESLint configs for TypeScript",
-  "repository": "https://github.com/ouuan/eslint-config/tree/master/packages/ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ouuan/eslint-config.git",
+    "directory": "packages/ts"
+  },
   "author": "Yufan You <ouuansteve@gmail.com>",
   "license": "Apache-2.0",
   "private": false,
