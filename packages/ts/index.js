@@ -68,7 +68,16 @@ module.exports = {
 
     'max-statements-per-line': ['error', { max: 1 }],
 
-    'no-restricted-syntax': ['error', 'ForInStatement', 'LabeledStatement', 'WithStatement'],
+    'no-restricted-syntax': [
+      'error',
+      'ForInStatement',
+      'LabeledStatement',
+      'WithStatement',
+      {
+        selector: "CallExpression[callee.property.name='replace'] > .arguments:nth-child(2):not(Literal):not(ArrowFunctionExpression):not(FunctionExpression)",
+        message: 'Only literals and functions are permitted as the 2nd argument of String.prototype.replace. Use a function that returns the expression instead.',
+      },
+    ],
 
     'no-constant-condition': ['error', { checkLoops: false }],
 
