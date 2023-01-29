@@ -77,6 +77,10 @@ module.exports = {
         selector: "CallExpression[callee.property.name='replace'] > .arguments:nth-child(2):not(Literal):not(ArrowFunctionExpression):not(FunctionExpression)",
         message: 'Only literals and functions are permitted as the 2nd argument of String.prototype.replace. Use a function that returns the expression instead.',
       },
+      {
+        selector: "CallExpression[callee.property.name='replaceAll']",
+        message: 'Use replace with /regex/g instead.',
+      },
     ],
 
     'no-constant-condition': ['error', { checkLoops: false }],
