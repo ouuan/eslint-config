@@ -5,7 +5,7 @@ importers:
   .:
     specifiers:
       '@ouuan/eslint-config-ts': workspace:*
-      bumpp: ^8.2.1
+      bumpp: 8.2.1
       eslint: 8.34.0
     devDependencies:
       '@ouuan/eslint-config-ts': link:packages/ts
@@ -19,7 +19,7 @@ importers:
       eslint: 8.34.0
       eslint-config-airbnb-base: ^15.0.0
       eslint-plugin-import: ^2.27.5
-      typescript: ^4.9.5
+      typescript: 4.9.5
     dependencies:
       '@typescript-eslint/eslint-plugin': 5.50.0_z4w6sgucxc7wjocw543h5gv5dy
       '@typescript-eslint/parser': 5.50.0_7kw3g6rralp5ps6mg3uyzz6azm
@@ -35,7 +35,7 @@ importers:
       '@vue/eslint-config-typescript': ^11.0.2
       eslint: 8.34.0
       eslint-plugin-vue: ^9.9.0
-      typescript: ^4.9.5
+      typescript: 4.9.5
     dependencies:
       '@ouuan/eslint-config-ts': link:../ts
       '@vue/eslint-config-typescript': 11.0.2_h2vevngznqqjsppuxlkfy3oipa
