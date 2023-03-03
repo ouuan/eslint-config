@@ -86,5 +86,7 @@ module.exports = {
     'no-constant-condition': ['error', { checkLoops: false }],
 
     'no-continue': 0,
+
+    'no-lonely-if': 0,
   },
 };
