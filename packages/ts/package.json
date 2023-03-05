@@ -1,6 +1,6 @@
 {
   "name": "@ouuan/eslint-config-ts",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "main": "index.js",
   "description": "ouuan's personal ESLint configs for TypeScript",
   "repository": {
