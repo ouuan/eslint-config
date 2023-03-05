@@ -56,5 +56,7 @@ module.exports = {
     'vue/valid-define-props': 2,
 
     'vue/valid-next-tick': 2,
+
+    'vue/no-boolean-default': ['error', 'default-false'],
   },
 };
