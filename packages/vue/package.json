@@ -18,7 +18,7 @@
   "dependencies": {
     "@ouuan/eslint-config-ts": "workspace:*",
     "@vue/eslint-config-typescript": "^11.0.2",
-    "eslint-plugin-vue": "^9.9.0"
+    "eslint-plugin-vue": "^9.10.0"
   },
   "peerDependencies": {
     "eslint": ">=8",
