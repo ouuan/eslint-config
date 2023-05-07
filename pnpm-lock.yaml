@@ -42,8 +42,8 @@ importers:
         specifier: workspace:*
         version: link:../ts
       '@vue/eslint-config-typescript':
-        specifier: ^11.0.2
-        version: 11.0.2(eslint-plugin-vue@9.11.0)(eslint@8.40.0)(typescript@5.0.4)
+        specifier: ^11.0.3
+        version: 11.0.3(eslint-plugin-vue@9.11.0)(eslint@8.40.0)(typescript@5.0.4)
       eslint-plugin-vue:
         specifier: ^9.11.0
         version: 9.11.0(eslint@8.40.0)
@@ -277,8 +277,8 @@ packages:
       eslint-visitor-keys: 3.4.1
     dev: false
 
-  /@vue/eslint-config-typescript@11.0.2(eslint-plugin-vue@9.11.0)(eslint@8.40.0)(typescript@5.0.4):
-    resolution: {integrity: sha512-EiKud1NqlWmSapBFkeSrE994qpKx7/27uCGnhdqzllYDpQZroyX/O6bwjEpeuyKamvLbsGdO6PMR2faIf+zFnw==}
+  /@vue/eslint-config-typescript@11.0.3(eslint-plugin-vue@9.11.0)(eslint@8.40.0)(typescript@5.0.4):
+    resolution: {integrity: sha512-dkt6W0PX6H/4Xuxg/BlFj5xHvksjpSlVjtkQCpaYJBIEuKj2hOVU7r+TIe+ysCwRYFz/lGqvklntRkCAibsbPw==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
@@ -293,7 +293,7 @@ packages:
       eslint: 8.40.0
       eslint-plugin-vue: 9.11.0(eslint@8.40.0)
       typescript: 5.0.4
-      vue-eslint-parser: 9.1.0(eslint@8.40.0)
+      vue-eslint-parser: 9.2.1(eslint@8.40.0)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -1728,6 +1728,24 @@ packages:
 
   /vue-eslint-parser@9.1.0(eslint@8.40.0):
     resolution: {integrity: sha512-NGn/iQy8/Wb7RrRa4aRkokyCZfOUWk19OP5HP6JEozQFX5AoS/t+Z0ZN7FY4LlmWc4FNI922V7cvX28zctN8dQ==}
+    engines: {node: ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: '>=6.0.0'
+    dependencies:
+      debug: 4.3.4
+      eslint: 8.40.0
+      eslint-scope: 7.2.0
+      eslint-visitor-keys: 3.4.1
+      espree: 9.5.2
+      esquery: 1.4.2
+      lodash: 4.17.21
+      semver: 7.3.8
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /vue-eslint-parser@9.2.1(eslint@8.40.0):
+    resolution: {integrity: sha512-tPOex4n6jit4E7h68auOEbDMwE58XiP4dylfaVTCOVCouR45g+QFDBjgIdEU52EXJxKyjgh91dLfN2rxUcV0bQ==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
