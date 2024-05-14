@@ -8,9 +8,11 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'airbnb-base',
+    'plugin:regexp/recommended',
   ],
   plugins: [
     '@typescript-eslint',
+    'regexp',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
