@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@ouuan/eslint-config-ts": "workspace:*",
-    "bumpp": "9.4.2",
+    "bumpp": "9.5.2",
     "eslint": "8.57.0"
   }
 }
