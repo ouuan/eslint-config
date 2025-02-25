@@ -28,6 +28,7 @@ module.exports = {
         devDependencies: [
           './*.config.ts',
           './**/*.spec.ts',
+          './**/*.d.ts',
         ],
       },
     ],
