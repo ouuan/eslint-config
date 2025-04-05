@@ -33,8 +33,9 @@ module.exports = {
       },
     ],
 
-    // TS server checks undef, ESLint only works for JS
+    // checked by TypeScript
     'no-undef': 0,
+    'no-redeclare': 0,
 
     indent: 0,
     '@typescript-eslint/indent': [
