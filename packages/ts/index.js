@@ -24,11 +24,6 @@ export default tseslint.config(
       },
     },
   },
-  {
-    ...tseslint.configs.disableTypeChecked,
-    files: ['**/*.js'],
-    name: '@ouuan/disable-type-checked-lint-for-js',
-  },
   withName(stylistic.configs.customize({
     semi: true,
     arrowParens: true,
@@ -41,12 +36,29 @@ export default tseslint.config(
     name: '@ouuan/ts-custom',
     rules: {
       '@stylistic/function-call-spacing': 'error',
+      '@stylistic/max-len': ['error', {
+        code: 100,
+        ignoreUrls: true,
+      }],
+      '@stylistic/quotes': ['error', 'single', {
+        avoidEscape: true,
+        allowTemplateLiterals: 'avoidEscape',
+      }],
+
       '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/prefer-nullish-coalescing': ['error', {
+        ignorePrimitives: {
+          string: true,
+          boolean: true,
+        },
+      }],
+      '@typescript-eslint/prefer-regexp-exec': 'off',
       '@typescript-eslint/restrict-template-expressions': ['error', {
         allowBoolean: false,
         allowNever: false,
         allowNullish: false,
       }],
+
       'import/no-unresolved': 'off',
       'import/no-extraneous-dependencies': [
         'error',
@@ -58,6 +70,7 @@ export default tseslint.config(
           optionalDependencies: false,
         },
       ],
+
       'no-console': 'warn',
       'no-param-reassign': 'error',
       'no-restricted-syntax': [
@@ -75,5 +88,10 @@ export default tseslint.config(
         },
       ],
     },
+  },
+  {
+    ...tseslint.configs.disableTypeChecked,
+    files: ['**/*.js'],
+    name: '@ouuan/disable-type-checked-lint-for-js',
   },
 );

@@ -7,8 +7,16 @@ export default defineConfigWithVueTs(
   pluginVue.configs['flat/recommended'],
   vueTsConfigs.strictTypeChecked,
   {
-    name: '@ouuan/vue-custom',
+    name: '@ouuan/ts-custom-override',
     rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
+  {
+    name: '@ouuan/vue-custom',
+    files: ['**/*.vue'],
+    rules: {
+      '@typescript-eslint/prefer-function-type': 'off', // for defineEmits
       'vue/component-name-in-template-casing': [
         'error',
         'kebab-case',
