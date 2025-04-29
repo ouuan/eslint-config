@@ -1,96 +1,72 @@
-module.exports = {
-  env: {
-    es6: true,
-    node: true,
-    browser: true,
-  },
-  reportUnusedDisableDirectives: true,
-  extends: [
-    'eslint:recommended',
-    'airbnb-base',
-    'plugin:regexp/recommended',
-  ],
-  plugins: [
-    '@typescript-eslint',
-    'regexp',
-  ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
-  rules: {
-    'import/extensions': 0,
-    'import/no-unresolved': 0,
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: [
-          './*.config.ts',
-          './**/*.spec.ts',
-          './**/*.d.ts',
-        ],
+import eslint from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import stylistic from '@stylistic/eslint-plugin';
+import importPlugin from 'eslint-plugin-import';
+import * as regexpPlugin from 'eslint-plugin-regexp';
+
+function withName(config, name) {
+  return {
+    ...config,
+    name,
+  };
+}
+
+export default tseslint.config(
+  eslint.configs.recommended,
+  tseslint.configs.strictTypeChecked,
+  tseslint.configs.stylisticTypeChecked,
+  {
+    name: '@ouuan/typescript-parser',
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
       },
-    ],
-
-    // checked by TypeScript
-    'no-undef': 0,
-    'no-redeclare': 0,
-
-    indent: 0,
-    '@typescript-eslint/indent': [
-      'error',
-      2,
-    ],
-
-    semi: 0,
-    '@typescript-eslint/semi': 2,
-
-    'no-shadow': 0,
-    '@typescript-eslint/no-shadow': 2,
-
-    'no-empty-function': 0,
-    '@typescript-eslint/no-empty-function': 2,
-
-    'no-unused-vars': 0,
-    '@typescript-eslint/no-unused-vars': 2,
-
-    'no-spaced-func': 0,
-    'func-call-spacing': 0,
-    '@typescript-eslint/func-call-spacing': 2,
-
-    'no-use-before-define': 0,
-    '@typescript-eslint/no-use-before-define': 2,
-
-    '@typescript-eslint/explicit-module-boundary-types': 0,
-
-    '@typescript-eslint/no-explicit-any': 0,
-
-    '@typescript-eslint/type-annotation-spacing': 2,
-
-    'no-inner-declarations': 0,
-
-    'max-statements-per-line': ['error', { max: 1 }],
-
-    'no-restricted-syntax': [
-      'error',
-      'ForInStatement',
-      'LabeledStatement',
-      'WithStatement',
-      {
-        selector: "CallExpression[callee.property.name='replace'] > .arguments:nth-child(2):not(Literal):not(ArrowFunctionExpression):not(FunctionExpression)",
-        message: 'Only literals and functions are permitted as the 2nd argument of String.prototype.replace. Use a function that returns the expression instead.',
-      },
-      {
-        selector: "CallExpression[callee.property.name='replaceAll']",
-        message: 'Use replace with /regex/g instead.',
-      },
-    ],
-
-    'no-constant-condition': ['error', { checkLoops: false }],
-
-    'no-continue': 0,
-
-    'no-lonely-if': 0,
+    },
   },
-};
+  {
+    ...tseslint.configs.disableTypeChecked,
+    files: ['**/*.js'],
+    name: '@ouuan/disable-type-checked-lint-for-js',
+  },
+  withName(stylistic.configs.customize({
+    semi: true,
+    arrowParens: true,
+    braceStyle: '1tbs',
+  }), '@ouuan/stylistic-factory'),
+  withName(regexpPlugin.configs['flat/recommended'], 'regexp/recommended'),
+  importPlugin.flatConfigs.recommended,
+  withName(importPlugin.flatConfigs.typescript, 'import/typescript'),
+  {
+    name: '@ouuan/ts-custom',
+    rules: {
+      '@stylistic/function-call-spacing': 'error',
+      '@typescript-eslint/no-explicit-any': 'off',
+      'import/no-unresolved': 'off',
+      'import/no-extraneous-dependencies': [
+        'error',
+        {
+          devDependencies: [
+            '**/*.{config,spec}.{js,ts}',
+            '**/*.d.ts',
+          ],
+          optionalDependencies: false,
+        },
+      ],
+      'no-restricted-syntax': [
+        'error',
+        'ForInStatement',
+        'LabeledStatement',
+        'WithStatement',
+        {
+          selector: 'CallExpression[callee.property.name=\'replace\'] > .arguments:nth-child(2):not(Literal):not(ArrowFunctionExpression):not(FunctionExpression)',
+          message: 'Only literals and functions are permitted as the 2nd argument of String.prototype.replace. Use a function that returns the expression instead.',
+        },
+        {
+          selector: 'CallExpression[callee.property.name=\'replaceAll\']',
+          message: 'Use replace with /regex/g instead.',
+        },
+      ],
+    },
+  },
+);
