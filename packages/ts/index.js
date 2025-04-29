@@ -42,6 +42,11 @@ export default tseslint.config(
     rules: {
       '@stylistic/function-call-spacing': 'error',
       '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/restrict-template-expressions': ['error', {
+        allowBoolean: false,
+        allowNever: false,
+        allowNullish: false,
+      }],
       'import/no-unresolved': 'off',
       'import/no-extraneous-dependencies': [
         'error',
@@ -53,6 +58,8 @@ export default tseslint.config(
           optionalDependencies: false,
         },
       ],
+      'no-console': 'warn',
+      'no-param-reassign': 'error',
       'no-restricted-syntax': [
         'error',
         'ForInStatement',
