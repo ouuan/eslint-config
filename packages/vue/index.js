@@ -1,12 +1,14 @@
 import ouuan from '@ouuan/eslint-config-ts';
 import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript';
 import pluginVue from 'eslint-plugin-vue';
+import pluginVueA11y from 'eslint-plugin-vuejs-accessibility';
 
 export default defineConfigWithVueTs(
   ...ouuan,
   pluginVue.configs['flat/recommended'],
   vueTsConfigs.strictTypeChecked,
   vueTsConfigs.stylisticTypeChecked,
+  ...pluginVueA11y.configs['flat/recommended'],
   {
     name: '@ouuan/vue-override',
     rules: {
