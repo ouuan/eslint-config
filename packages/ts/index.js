@@ -1,8 +1,10 @@
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import { globalIgnores } from 'eslint/config';
-import importPlugin from 'eslint-plugin-import';
-import * as regexpPlugin from 'eslint-plugin-regexp';
+import pluginImport from 'eslint-plugin-import';
+import pluginPromise from 'eslint-plugin-promise';
+import * as pluginRegexp from 'eslint-plugin-regexp';
+import pluginSecurity from 'eslint-plugin-security';
 import tseslint from 'typescript-eslint';
 
 function withName(config, name) {
@@ -35,9 +37,11 @@ export default tseslint.config(
     arrowParens: true,
     braceStyle: '1tbs',
   }), '@ouuan/stylistic-factory'),
-  withName(regexpPlugin.configs['flat/recommended'], 'regexp/recommended'),
-  importPlugin.flatConfigs.recommended,
-  withName(importPlugin.flatConfigs.typescript, 'import/typescript'),
+  withName(pluginRegexp.configs['flat/recommended'], 'regexp/recommended'),
+  pluginImport.flatConfigs.recommended,
+  withName(pluginImport.flatConfigs.typescript, 'import/typescript'),
+  pluginPromise.configs['flat/recommended'],
+  pluginSecurity.configs.recommended,
   {
     name: '@ouuan/enable',
     rules: {
@@ -78,11 +82,13 @@ export default tseslint.config(
           boolean: true,
         },
       }],
+      '@typescript-eslint/prefer-readonly': 'error',
       '@typescript-eslint/restrict-template-expressions': ['error', {
         allowBoolean: false,
         allowNever: false,
         allowNullish: false,
       }],
+      '@typescript-eslint/switch-exhaustiveness-check': 'error',
 
       'import/no-extraneous-dependencies': [
         'error',
@@ -103,6 +109,11 @@ export default tseslint.config(
       'import/no-dynamic-require': 'error',
       'import/no-named-default': 'error',
       'import/no-useless-path-segments': 'error',
+
+      'promise/no-multiple-resolved': 'error',
+      'promise/prefer-await-to-then': 'error',
+      'promise/prefer-await-to-callbacks': 'error',
+      'promise/spec-only': 'error',
 
       'array-callback-return': 'error',
       'camelcase': ['error', {
