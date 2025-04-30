@@ -115,6 +115,10 @@ export default tseslint.config(
       'promise/prefer-await-to-callbacks': 'error',
       'promise/spec-only': 'error',
 
+      // Too many false positives, even array indexing in a constant for loop
+      // https://github.com/eslint-community/eslint-plugin-security/issues/21
+      'security/detect-object-injection': 'off',
+
       'array-callback-return': 'error',
       'camelcase': ['error', {
         properties: 'never',

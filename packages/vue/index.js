@@ -20,6 +20,10 @@ export default defineConfigWithVueTs(
     files: ['**/*.vue'],
     rules: {
       '@typescript-eslint/prefer-function-type': 'off', // for defineEmits
+
+      // See https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility/issues/54
+      'vuejs-accessibility/label-has-for': ['error', { required: 'id' }],
+
       'vue/array-bracket-newline': ['error', 'consistent'],
       'vue/array-bracket-spacing': 'error',
       'vue/arrow-spacing': 'error',
@@ -49,10 +53,6 @@ export default defineConfigWithVueTs(
       'vue/no-loss-of-precision': 'error',
       'vue/no-restricted-syntax': [
         'error',
-        {
-          selector: 'VElement > VExpressionContainer CallExpression',
-          message: 'Use `computed` instead of calling functions in template',
-        },
         {
           // eslint-disable-next-line @stylistic/max-len
           selector: 'CallExpression[callee.property.name=\'replace\'] > .arguments:nth-child(2):not(Literal):not(ArrowFunctionExpression):not(FunctionExpression)',
