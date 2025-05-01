@@ -1,6 +1,6 @@
 {
   "name": "@ouuan/eslint-config",
-  "version": "2.0.0-beta.5",
+  "version": "2.0.0",
   "description": "ouuan's personal ESLint configs",
   "repository": "https://github.com/ouuan/eslint-config",
   "author": "Yufan You <ouuansteve@gmail.com>",
