@@ -103,6 +103,7 @@ export default tseslint.config(
       'import/no-mutable-exports': 'error',
       'import/order': ['error', {
         alphabetize: { order: 'asc' },
+        named: { enabled: true, types: 'types-last' },
       }],
       'import/newline-after-import': 'error',
       'import/no-absolute-path': 'error',
