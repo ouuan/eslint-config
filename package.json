@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@ouuan/eslint-config-ts": "workspace:*",
-    "@ouuan/tsconfig-base": "1.3.3",
+    "@ouuan/tsconfig-base": "1.3.4",
     "bumpp": "10.1.0",
     "eslint": "9.25.1",
     "typescript": "5.8.3"
