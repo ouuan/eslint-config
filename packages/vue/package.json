@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "@ouuan/eslint-config-ts": "workspace:*",
-    "@vue/eslint-config-typescript": "^14.5.1",
+    "@vue/eslint-config-typescript": "^14.6.0",
     "eslint-plugin-vue": "^10.2.0",
     "eslint-plugin-vuejs-accessibility": "^2.4.1"
   },
