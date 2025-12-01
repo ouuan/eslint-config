@@ -1,6 +1,6 @@
 {
   "name": "@ouuan/eslint-config-vue",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "type": "module",
   "main": "index.js",
   "description": "ouuan's personal ESLint configs for Vue with TypeScript",
