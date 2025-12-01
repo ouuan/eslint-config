@@ -1,6 +1,6 @@
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
-import { globalIgnores } from 'eslint/config';
+import { defineConfig, globalIgnores } from 'eslint/config';
 import pluginImport from 'eslint-plugin-import';
 import pluginPromise from 'eslint-plugin-promise';
 import * as pluginRegexp from 'eslint-plugin-regexp';
@@ -14,7 +14,7 @@ function withName(config, name) {
   };
 }
 
-export default tseslint.config(
+export default defineConfig(
   globalIgnores([
     '**/dist/',
     '**/public/',
