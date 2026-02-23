@@ -70,7 +70,7 @@ importers:
         specifier: workspace:*
         version: link:../ts
       '@vue/eslint-config-typescript':
-        specifier: ^14.6.0
+        specifier: ^14.7.0
         version: 14.7.0(eslint-plugin-vue@10.8.0(@stylistic/eslint-plugin@4.4.1(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(@typescript-eslint/parser@8.56.0(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.3(jiti@2.6.1))(vue-eslint-parser@10.4.0(eslint@9.39.3(jiti@2.6.1))))(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)
       eslint-plugin-vue:
         specifier: ^10.8.0
